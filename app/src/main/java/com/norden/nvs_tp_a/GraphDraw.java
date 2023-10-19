@@ -17,14 +17,14 @@ public class GraphDraw {
         if(data==null||data.size()<1){
             return;
         }
-        bm.eraseColor(Color.parseColor("#FF222222"));
+        bm.eraseColor(Color.parseColor("#22000000"));
         Paint pnt=new Paint();
         Canvas canvas=new Canvas(bm);
 
         Path pth = new Path();
         pnt.setStyle(Paint.Style.STROKE);
         pnt.setStrokeWidth( 4);
-        pnt.setColor(Color.parseColor("#FFAAAAAA"));
+        pnt.setColor(Color.parseColor("#FFAAFFAA"));
         pnt.setTextSize(50);
 
         int factor=W/data.size();

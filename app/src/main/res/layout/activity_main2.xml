@@ -9,6 +9,17 @@
     tools:context=".MainActivity2">
 
     <ImageView
+        android:id="@+id/graph_image2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:contentDescription="fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/secnor" />
+
+    <ImageView
         android:id="@+id/graph_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +34,6 @@
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
 
         android:background="@color/black"
@@ -32,6 +42,8 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/white" />
 
@@ -39,16 +51,16 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
 
-        android:layout_marginBottom="16dp"
         android:background="@color/black"
         android:text="Stop"
         android:textColor="#9E9E9E"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/start_button"
+        app:layout_constraintBottom_toBottomOf="@+id/to_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/to_btn"
+        app:layout_constraintTop_toTopOf="@+id/to_btn"
         app:strokeColor="@color/white" />
 
     <Button
@@ -61,11 +73,11 @@
         android:textColor="#9E9E9E"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/frm2"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/to_btn"
-        app:layout_constraintTop_toTopOf="@+id/frm2"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber2"
         app:strokeColor="@color/white" />
 
     <Button
@@ -106,31 +118,58 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
 
-        android:layout_marginBottom="16dp"
         android:background="@color/black"
         android:text="Ring"
         android:textColor="#9E9E9E"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/start_button"
         app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/start_button"
+        app:layout_constraintTop_toTopOf="@+id/start_button"
         app:strokeColor="@color/white" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
 
-        android:layout_marginBottom="16dp"
         android:background="@color/black"
         android:text="End"
         android:textColor="#9E9E9E"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/button3"
         app:strokeColor="@color/white" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="122dp"
+        android:layout_height="46dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="501dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="122dp"
+        android:layout_height="46dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintEnd_toStartOf="@+id/select_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
 </androidx.constraintlayout.widget.ConstraintLayout>
