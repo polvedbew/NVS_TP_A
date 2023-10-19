@@ -17,14 +17,14 @@ public class GraphDraw {
         if(data==null||data.size()<1){
             return;
         }
-        bm.eraseColor(Color.parseColor("#FF222222"));
+        bm.eraseColor(Color.parseColor("#22000000"));
         Paint pnt=new Paint();
         Canvas canvas=new Canvas(bm);
 
         Path pth = new Path();
         pnt.setStyle(Paint.Style.STROKE);
         pnt.setStrokeWidth( 4);
-        pnt.setColor(Color.parseColor("#FFAAAAAA"));
+        pnt.setColor(Color.parseColor("#FF66FF88"));
         pnt.setTextSize(50);
 
         int factor=W/data.size();
@@ -32,12 +32,16 @@ public class GraphDraw {
         int x=0;
         pth.moveTo(x, 0);
         for (int i=0;i<data.size();i++) {
-            pth.lineTo(factor*i, W-(float)data.get(i) );
+            pth.lineTo((factor*i), W-(float)data.get(i) );
         }
 
         canvas.drawPath(pth, pnt);
         canvas.drawText("-100-",20,W-100,pnt);
         canvas.drawText("-"+(H-80)+"-",20,100,pnt);
+
+        canvas.drawText("-10-",10,H,pnt);
+        canvas.drawText("-100-",600,H,pnt);
+
 
     }
 
