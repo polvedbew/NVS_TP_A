@@ -31,45 +31,29 @@
         app:srcCompat="@drawable/nvs" />
 
     <Button
-        android:id="@+id/start_button"
+        android:id="@+id/new_ring"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
 
         android:background="@color/black"
-        android:text="Start"
+        android:text="n ring"
         android:textColor="#9E9E9E"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/read_end"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/white" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/send_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:background="@color/black"
-        android:text="Stop"
-        android:textColor="#9E9E9E"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/to_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/to_btn"
-        app:layout_constraintTop_toTopOf="@+id/to_btn"
-        app:strokeColor="@color/white" />
-
-    <Button
-        android:id="@+id/select_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:background="@color/black"
-        android:text="Select"
+        android:text="Send"
         android:textColor="#9E9E9E"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -81,54 +65,38 @@
         app:strokeColor="@color/white" />
 
     <Button
-        android:id="@+id/frm2"
+        android:id="@+id/read_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginBottom="16dp"
         android:background="@color/black"
-        android:text="From"
+        android:text="n end"
         android:textColor="#9E9E9E"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/to_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/new_ring"
+        app:layout_constraintEnd_toStartOf="@+id/read_ring"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/new_ring"
+        app:layout_constraintTop_toTopOf="@+id/new_ring"
+        app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/white" />
 
     <Button
-        android:id="@+id/to_btn"
+        android:id="@+id/read_ring"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:background="@color/black"
-        android:text="To"
+        android:text="r ring"
         android:textColor="#9E9E9E"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/frm2"
-        app:layout_constraintEnd_toStartOf="@+id/select_btn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/frm2"
-        app:layout_constraintTop_toTopOf="@+id/frm2"
-        app:strokeColor="@color/white" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:background="@color/black"
-        android:text="Ring"
-        android:textColor="#9E9E9E"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/start_button"
+        app:layout_constraintBottom_toBottomOf="@+id/new_ring"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/start_button"
-        app:layout_constraintTop_toTopOf="@+id/start_button"
+        app:layout_constraintStart_toEndOf="@+id/read_end"
+        app:layout_constraintTop_toTopOf="@+id/new_ring"
         app:strokeColor="@color/white" />
 
     <Button
@@ -137,15 +105,15 @@
         android:layout_height="wrap_content"
 
         android:background="@color/black"
-        android:text="End"
+        android:text="n end"
         android:textColor="#9E9E9E"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintBottom_toBottomOf="@+id/read_end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/read_ring"
+        app:layout_constraintTop_toTopOf="@+id/read_end"
         app:strokeColor="@color/white" />
 
     <EditText
@@ -156,7 +124,7 @@
         android:background="@color/white"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/frm2"
+        app:layout_constraintBottom_toTopOf="@+id/new_ring"
         app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
@@ -169,7 +137,7 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
-        app:layout_constraintEnd_toStartOf="@+id/select_btn"
+        app:layout_constraintEnd_toStartOf="@+id/send_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editTextNumber"
         app:layout_constraintTop_toTopOf="@+id/editTextNumber" />

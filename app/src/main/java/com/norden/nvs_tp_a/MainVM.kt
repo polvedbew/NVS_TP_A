@@ -8,11 +8,16 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class MainVM :ViewModel(){
 
+    private val exc:ExecutorService = Executors.newSingleThreadExecutor()
     private val _graph : MutableLiveData<Bitmap> = MutableLiveData()
     val graph          : LiveData<Bitmap> = _graph
+
+    private val ip="192.168.4.1"
 
     val dataList = arrayListOf<Int>()
 
@@ -39,11 +44,12 @@ class MainVM :ViewModel(){
         busy=true
         mLog.print("start socket....,clearing data")
         dataList.clear()
-        sob= object:UdpCon("192.168.4.1"){
+        sob= object:UdpCon(ip){
             override fun newData(data: String?) {
                 mLog.print("received $data")
                 data?.let {
                     val lst=StringDecode.getIntList(data)
+                    dataList.clear()
                     for(v:Int in lst){
                         dataList.add(v)
                     }
@@ -51,6 +57,12 @@ class MainVM :ViewModel(){
                 }
             }
         }
+        val sb=sob
+        exc.submit {
+            sb?.startSocket()
+        }
+
+
     }
 
     fun stopSocket(){
@@ -76,9 +88,19 @@ class MainVM :ViewModel(){
         }
     }
 
+    fun sendData() {
+        val sb=sob
+        exc.submit {
+            sb?.sendValues(ip,dataList.toIntArray().sliceArray(1..20))
+        }
+    }
 
-
-
+    fun readRing() {
+        val sb=sob
+        exc.submit {
+            sb?.readData()
+        }
+    }
 
 
 }
