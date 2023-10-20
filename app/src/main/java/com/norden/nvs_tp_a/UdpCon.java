@@ -98,7 +98,11 @@ public abstract class UdpCon {
         try {
             StringBuilder messageStr = new StringBuilder("SET ");
             for(int a: template){
-                messageStr.append(a);
+                String tmp=String.valueOf(a);
+                while(tmp.length()<3){
+                    tmp="0"+tmp;
+                }
+                messageStr.append(tmp);
             }
             int server_port = 1818;
             InetAddress local = InetAddress.getByName(ip);
