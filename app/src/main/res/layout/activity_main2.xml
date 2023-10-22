@@ -42,7 +42,7 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/read_end"
+        app:layout_constraintEnd_toStartOf="@+id/new_beep"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/white" />
@@ -65,7 +65,7 @@
         app:strokeColor="@color/white" />
 
     <Button
-        android:id="@+id/read_end"
+        android:id="@+id/new_beep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -93,27 +93,27 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/new_ring"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/read_beep"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/read_end"
+        app:layout_constraintStart_toEndOf="@+id/new_beep"
         app:layout_constraintTop_toTopOf="@+id/new_ring"
         app:strokeColor="@color/white" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/read_beep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:background="@color/black"
-        android:text="n end"
+        android:text="R end"
         android:textColor="#9E9E9E"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/read_end"
+        app:layout_constraintBottom_toBottomOf="@+id/new_beep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/read_ring"
-        app:layout_constraintTop_toTopOf="@+id/read_end"
+        app:layout_constraintTop_toTopOf="@+id/new_beep"
         app:strokeColor="@color/white" />
 
     <EditText

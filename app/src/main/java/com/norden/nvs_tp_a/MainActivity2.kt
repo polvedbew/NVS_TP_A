@@ -1,6 +1,5 @@
 package com.norden.nvs_tp_a
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +8,7 @@ import android.widget.ImageView
 class MainActivity2 : AppCompatActivity() {
 
     private val mvm:MainVM = MainVM()
+    private var ringOrBeep:Boolean=true;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,15 +30,26 @@ class MainActivity2 : AppCompatActivity() {
         findViewById<Button>(R.id.new_ring).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)
             mLog.print("clicked start..")
+            ringOrBeep=true;
             mvm.startSocket()
         }
         findViewById<Button>(R.id.send_btn).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)
-            mvm.sendData();
+            mvm.sendData(ringOrBeep);
         }
         findViewById<Button>(R.id.read_ring).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)
             mvm.readRing();
+        }
+        findViewById<Button>(R.id.new_beep).setOnClickListener {
+            //it.setBackgroundColor(Color.BLACK)
+            mLog.print("clicked start..")
+            ringOrBeep=false;
+            mvm.startSocket()
+        }
+        findViewById<Button>(R.id.read_beep).setOnClickListener {
+            //it.setBackgroundColor(Color.BLACK)
+            mvm.readBeep();
         }
     }
 }

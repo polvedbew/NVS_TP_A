@@ -88,10 +88,10 @@ class MainVM :ViewModel(){
         }
     }
 
-    fun sendData() {
+    fun sendData(isRing:Boolean) {
         val sb=sob
         exc.submit {
-            sb?.sendValues(ip,dataList.toIntArray().sliceArray(1..20))
+            sb?.sendValues(isRing,ip,dataList.toIntArray().sliceArray(1..20))
         }
     }
 
@@ -100,6 +100,10 @@ class MainVM :ViewModel(){
         exc.submit {
             sb?.readData()
         }
+    }
+
+    fun readBeep() {
+        TODO("Not yet implemented")
     }
 
 

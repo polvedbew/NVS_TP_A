@@ -94,7 +94,7 @@ public abstract class UdpCon {
     }
 
 
-    public void sendValues(String ip,int[] template){
+    public void sendValues(final boolean isRing,String ip,int[] template){
         try {
             StringBuilder messageStr = new StringBuilder("SET ");
             for(int a: template){
