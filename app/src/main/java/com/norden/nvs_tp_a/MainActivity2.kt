@@ -3,6 +3,7 @@ package com.norden.nvs_tp_a
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 
 class MainActivity2 : AppCompatActivity() {
@@ -35,7 +36,10 @@ class MainActivity2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.send_btn).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)
-            mvm.sendData(ringOrBeep);
+            val from=Integer.parseInt(findViewById<EditText>(R.id.id_start_value).text.toString())
+            val tolerance=Integer.parseInt(findViewById<EditText>(R.id.id_tolerence_value).text.toString())
+            findViewById<Button>(R.id.send_btn)
+            mvm.sendData(ringOrBeep,tolerance,from)
         }
         findViewById<Button>(R.id.read_ring).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)

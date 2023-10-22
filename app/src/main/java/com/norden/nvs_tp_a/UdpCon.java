@@ -83,7 +83,7 @@ public abstract class UdpCon {
             hnd.post(()-> {
                     newData(tmp);
             });
-            //flag=false;
+            flag=false;
             s.close();
 
         }
@@ -94,7 +94,7 @@ public abstract class UdpCon {
     }
 
 
-    public void sendValues(final boolean isRing,String ip,int[] template){
+    public void sendValues(final boolean isRing,final int tolerance,String ip,int[] template){
         try {
             StringBuilder messageStr = new StringBuilder("SET ");
             for(int a: template){
@@ -147,7 +147,7 @@ public abstract class UdpCon {
             hnd.post(()-> {
                 newData(tmp);
             });
-            //flag=false;
+            flag=false;
             s.close();
 
         }
@@ -205,7 +205,7 @@ public abstract class UdpCon {
             hnd.post(()-> {
                 newData(tmp);
             });
-            //flag=false;
+            flag=false;
             s.close();
 
         }

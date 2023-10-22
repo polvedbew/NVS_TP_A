@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GraphDraw {
@@ -13,9 +14,12 @@ public class GraphDraw {
     private final int H=1080;
 
     private Bitmap bm = Bitmap.createBitmap(W, H, Bitmap.Config.ARGB_8888);
-    GraphDraw(List<Integer> data){
+    GraphDraw(ArrayList<Integer> data){
         if(data==null||data.size()<1){
             return;
+        }
+        while(data.size()<120){
+            data.add(0);
         }
         bm.eraseColor(Color.parseColor("#22000000"));
         Paint pnt=new Paint();
@@ -34,6 +38,7 @@ public class GraphDraw {
         for (int i=0;i<data.size();i++) {
             pth.lineTo((factor*i), W-(float)data.get(i) );
         }
+
 
         canvas.drawPath(pth, pnt);
         canvas.drawText("-100-",20,W-100,pnt);

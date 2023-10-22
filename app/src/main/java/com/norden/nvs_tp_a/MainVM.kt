@@ -2,6 +2,7 @@ package com.norden.nvs_tp_a
 
 import android.graphics.Bitmap
 import android.os.Handler
+import android.widget.EditText
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -88,10 +89,10 @@ class MainVM :ViewModel(){
         }
     }
 
-    fun sendData(isRing:Boolean) {
+    fun sendData(isRing:Boolean,tolerance:Int,from:Int) {
         val sb=sob
         exc.submit {
-            sb?.sendValues(isRing,ip,dataList.toIntArray().sliceArray(1..20))
+            sb?.sendValues(isRing,tolerance,ip,dataList.toIntArray().sliceArray(from..from+30))
         }
     }
 
