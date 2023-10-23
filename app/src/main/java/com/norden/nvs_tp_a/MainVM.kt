@@ -103,6 +103,12 @@ class MainVM :ViewModel(){
         }
     }
 
+    fun pickUp() {
+        val sb=sob
+        exc.submit {
+            sb?.pickUp();
+        }
+    }
 
 
 }

@@ -57,5 +57,9 @@ class MainActivity2 : AppCompatActivity() {
             ringOrBeep=false;
             mvm.read(false);
         }
+        findViewById<ImageView>(R.id.id_pick_up).setOnClickListener {
+            //it.setBackgroundColor(Color.BLACK)
+            mvm.pickUp();
+        }
     }
 }

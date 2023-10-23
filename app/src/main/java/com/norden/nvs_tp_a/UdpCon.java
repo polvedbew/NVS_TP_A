@@ -230,4 +230,28 @@ public abstract class UdpCon {
         }
     }
 
+    public void pickUp(){
+        try {
+            String messageStr = "PICKUP";
+
+            int server_port = 1818;
+            InetAddress local = InetAddress.getByName(ip);
+            int msg_length = messageStr.length();
+            byte[] message = messageStr.getBytes();
+
+            DatagramSocket s = new DatagramSocket();
+            s.setSoTimeout(6000);
+            DatagramPacket p = new DatagramPacket(message, msg_length, local, server_port);
+            s.send(p);
+
+
+
+            s.close();
+
+        }
+        catch(Exception ex)
+        {
+//
+        }
+    }
 }

@@ -147,4 +147,12 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/id_tolerence_value"
         app:layout_constraintTop_toTopOf="@+id/id_tolerence_value" />
+
+    <ImageView
+        android:id="@+id/id_pick_up"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_settings_phone_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
