@@ -169,10 +169,14 @@ public abstract class UdpCon {
         }
     }
 
-    public void readData(){
+    public void readData(final boolean isRing){
 
         try {
-            String messageStr = "READ";
+            String messageStr = "read";
+            if(isRing){
+                messageStr="READ";
+            }
+
             int server_port = 1818;
             InetAddress local = InetAddress.getByName(ip);
             int msg_length = messageStr.length();

@@ -96,16 +96,13 @@ class MainVM :ViewModel(){
         }
     }
 
-    fun readRing() {
+    fun read(isRing:Boolean) {
         val sb=sob
         exc.submit {
-            sb?.readData()
+            sb?.readData(isRing)
         }
     }
 
-    fun readBeep() {
-        TODO("Not yet implemented")
-    }
 
 
 }

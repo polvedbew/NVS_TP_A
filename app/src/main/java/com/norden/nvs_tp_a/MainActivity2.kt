@@ -43,7 +43,8 @@ class MainActivity2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.read_ring).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)
-            mvm.readRing();
+            ringOrBeep=true;
+            mvm.read(true);
         }
         findViewById<Button>(R.id.new_beep).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)
@@ -53,7 +54,8 @@ class MainActivity2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.read_beep).setOnClickListener {
             //it.setBackgroundColor(Color.BLACK)
-            mvm.readBeep();
+            ringOrBeep=false;
+            mvm.read(false);
         }
     }
 }
