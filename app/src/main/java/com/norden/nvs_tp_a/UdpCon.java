@@ -96,7 +96,17 @@ public abstract class UdpCon {
 
     public void sendValues(final boolean isRing,final int tolerance,String ip,int[] template){
         try {
-            StringBuilder messageStr = new StringBuilder("SET ");
+            StringBuilder messageStr;
+            if(isRing){
+                messageStr=new StringBuilder("SET ");
+            } else{
+                messageStr=new StringBuilder("Set ");
+            }
+            String tol=String.valueOf(tolerance);
+            while(tol.length()<3){
+                tol="0"+tol;
+            }
+            messageStr.append(tol);
             for(int a: template){
                 String tmp=String.valueOf(a);
                 while(tmp.length()<3){
@@ -134,6 +144,7 @@ public abstract class UdpCon {
                 if(str.length()>2){
                     str=str.substring(1,str.length()-1);
                 }
+
                 mLog.print("Received string is:"+str);
             }catch(Exception e){
                 flag=false;

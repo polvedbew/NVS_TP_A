@@ -92,7 +92,7 @@ class MainVM :ViewModel(){
     fun sendData(isRing:Boolean,tolerance:Int,from:Int) {
         val sb=sob
         exc.submit {
-            sb?.sendValues(isRing,tolerance,ip,dataList.toIntArray().sliceArray(from..from+30))
+            sb?.sendValues(isRing,tolerance,ip,dataList.toIntArray().sliceArray(from..from+30+5))
         }
     }
 
