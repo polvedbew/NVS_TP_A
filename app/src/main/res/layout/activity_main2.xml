@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/graph_image2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
         android:contentDescription="fff"
@@ -21,7 +21,7 @@
 
     <ImageView
         android:id="@+id/graph_image"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
         android:contentDescription="fff"
@@ -155,4 +155,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_settings_phone_24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0-255"
+        android:textColor="@color/purple_200"
+        app:layout_constraintBottom_toTopOf="@+id/id_tolerence_value"
+        app:layout_constraintEnd_toEndOf="@+id/id_tolerence_value"
+        app:layout_constraintStart_toStartOf="@+id/id_tolerence_value" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0-360"
+        android:textColor="@color/purple_200"
+        app:layout_constraintBottom_toTopOf="@+id/id_start_value"
+        app:layout_constraintEnd_toEndOf="@+id/id_start_value"
+        app:layout_constraintStart_toStartOf="@+id/id_start_value" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ public class StringDecode {
         List<Integer> toret = new ArrayList<>();
         int i=0;
         for (String number : conv) {
-            if(i++>=160){
+            if(i++>=600){
                 break;
             }
             try {

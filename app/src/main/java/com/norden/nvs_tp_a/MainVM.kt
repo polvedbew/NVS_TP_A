@@ -54,6 +54,7 @@ class MainVM :ViewModel(){
                     for(v:Int in lst){
                         dataList.add(v)
                     }
+
                     updatePreview()
                 }
             }
@@ -92,7 +93,7 @@ class MainVM :ViewModel(){
     fun sendData(isRing:Boolean,tolerance:Int,from:Int) {
         val sb=sob
         exc.submit {
-            sb?.sendValues(isRing,tolerance,ip,dataList.toIntArray().sliceArray(from..from+48))
+            sb?.sendValues(isRing,tolerance,ip,dataList.toIntArray().sliceArray(from..from+180))
         }
     }
 
